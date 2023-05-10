@@ -9,6 +9,7 @@ from fractions import Fraction
 op = 0
 con = 0
 flag = True
+space = ""
 
 
 
@@ -127,13 +128,33 @@ Ax + B
                 for i in range (0,len(paralela)):
                     if ((numran == paralela[i]) or (numran == termino_independiente) or (numran == 0)):
                         flag = False
+                
+                if ( len(str(float(numran))) < 5):
+                    numran = int(numran)
+
+                if (float(numran) < 0):
+                    numran = "(" + str(numran) + ")"
                         
                 if (flag == True):
                     paralela.append(numran)
                     con += 1
 
-                print (f"""
+                print (paralela)
+
+            print (f"""
 Funcion :  {coeficiente_principal}x + {termino_independiente}
 nFunciones paralelas a la dada:
+{coeficiente_principal}x + {paralela[0]}
+{coeficiente_principal}x + {paralela[1]}
+{coeficiente_principal}x + {paralela[2]}
 
                         """)
+            
+            space = input("precione cualquier tecla para continuar: ")
+        else:
+            space = input("""
+El coeficiente principal no puede ser 0.
+Precione cualquier tecla para continuar ...
+""")
+
+            
