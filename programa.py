@@ -27,17 +27,18 @@ perpendicular = []
 
 
 
-def probar(txt):
+def encajar(txt):
 
-    flag = 0
+    flag = True
 
-    while (flag == 0):
+    while (flag == True):
 
         num = input(txt)
 
         try:
-            resul = Fraction(num)
-            flag = 1
+            resul = round(float(Fraction(num)) , 2)
+
+            flag = False
 
         except ValueError:
             print("valor ingresado no correcto")
@@ -45,17 +46,41 @@ def probar(txt):
 
     return(resul)
 
+
+def exacto(txt):
+
+    flag = True
+
+    while (flag == True):
+
+        num = input(txt)
+
+        try:
+            resul = float(Fraction(num))
+            if float.is_integer(resul):
+                resul = int(resul)
+
+            flag = False
+
+        except ValueError:
+            print("valor ingresado no correcto")
+            continue
+
+    return(resul)
+
+
+
 def validar(txt):
 
-    flag = 0
+    flag = True
 
-    while (flag == 0):
+    while (flag == True):
 
         num = input(txt)
 
         try:
             resul = int(num)
-            flag = 1
+            flag = False
 
         except ValueError:
             print("valor ingresado no era un valor numerico")
@@ -102,9 +127,10 @@ Perfecto. Vamos a sacar las paralelas y perpendiculares de una Funcion Lineal.
 Ax + B
 
 """)
-        coeficiente_principal = probar("ingrese el valor principal (A):   ")
-        termino_independiente = probar("ingrese el termino independiente (B):  ")
+        coeficiente_principal = exacto("ingrese el valor principal (A):   ")
+        termino_independiente = encajar("ingrese el termino independiente (B):  ")
 
+        negative = (1 / coeficiente_principal) * (-1)
         
 
         os.system("cls")
@@ -116,37 +142,57 @@ Ax + B
         
                 ran = random.randint(-10,10)
 
-                numran = (float(termino_independiente) + float(ran))
-
-                if (  len(str(float(numran)))  ) < 7:
-
-                    numran = float(numran)
-        
-                else:
-                    numran = round(numran)
+                numran = termino_independiente + ran
 
                 for i in range (0,len(paralela)):
                     if ((numran == paralela[i]) or (numran == termino_independiente) or (numran == 0)):
                         flag = False
                 
-                if ( len(str(float(numran))) < 5):
-                    numran = int(numran)
-
-                if (float(numran) < 0):
+                if (numran < 0):
                     numran = "(" + str(numran) + ")"
                         
                 if (flag == True):
                     paralela.append(numran)
                     con += 1
 
-                print (paralela)
+
+
+
+
+            while (con < 3):
+                flag = True
+
+                ran = random.randint(-10,10)
+                
+                numran = termino_independiente + ran
+
+                for i in range (0,len(perpendicular)):
+                    if ((numran == perpendicular[i]) or (numran == termino_independiente) or (numran == 0)):
+                        flag = False
+                
+                if (numran < 0):
+                    numran = "(" + str(numran) + ")"
+                        
+                if (flag == True):
+                    perpendicular.append(numran)
+                    con += 1
+
+
+
+
 
             print (f"""
 Funcion :  {coeficiente_principal}x + {termino_independiente}
-nFunciones paralelas a la dada:
+
+Funciones paralelas a la dada:
 {coeficiente_principal}x + {paralela[0]}
 {coeficiente_principal}x + {paralela[1]}
 {coeficiente_principal}x + {paralela[2]}
+
+Funciones perpendiculares a la dada:
+{negative}x + {paralela[0]}
+{negative}x + {paralela[1]}
+{negative}x + {paralela[2]}
 
                         """)
             
