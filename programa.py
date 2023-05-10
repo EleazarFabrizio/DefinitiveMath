@@ -7,6 +7,8 @@ from fractions import Fraction
 # GLOBAL
 
 op = 0
+con = 0
+flag = True
 
 
 
@@ -14,6 +16,8 @@ op = 0
 
 coeficiente_principal = 0
 termino_independiente = 0
+paralela = []
+perpendicular = []
 
 
 
@@ -104,3 +108,32 @@ Ax + B
 
         os.system("cls")
 
+        if (coeficiente_principal != 0 ):
+
+            while (con < 3): ### Comienza a sacar las paralelas ###
+                flag = True
+        
+                ran = random.randint(-10,10)
+
+                numran = (float(termino_independiente) + float(ran))
+
+                if (  len(str(float(numran)))  ) < 7:
+
+                    numran = float(numran)
+        
+                else:
+                    numran = round(numran)
+
+                for i in range (0,len(paralela)):
+                    if ((numran == paralela[i]) or (numran == termino_independiente) or (numran == 0)):
+                        flag = False
+                        
+                if (flag == True):
+                    paralela.append(numran)
+                    con += 1
+
+                print (f"""
+Funcion :  {coeficiente_principal}x + {termino_independiente}
+nFunciones paralelas a la dada:
+
+                        """)
