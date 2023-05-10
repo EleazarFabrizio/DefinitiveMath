@@ -96,10 +96,10 @@ def validar_rango(txt,min,max):
                 flag = False
                 resul = num
             else:
-                print("valor ingresado fuera de rango")
+                print("valor ingresado fuera de rango.")
 
         except ValueError:
-            print("valor ingresado no era un valor numerico")
+            print("valor ingresado no era un valor numerico.")
             continue
 
     return(resul)
@@ -120,9 +120,10 @@ while 1:
     
     print("""
 
-    Bienvenido al programa de resolucion de funciones lineales y cuadraticas.
-    ¿En que podemos ayudarle?
-    por favor ingrese un
+Bienvenido al programa de resolucion de funciones lineales y cuadraticas.
+¿En que podemos ayudarle?
+
+    por favor ingrese una opcion.
 
     1) Sacar las Paralelas y Perpendiculares a una Funcion Lineal.
 
@@ -132,11 +133,10 @@ while 1:
     
     """)
 
-    op = validar("      :   ")
+    op = validar_rango("      :   ",1,3)
 
     os.system("cls")
-    paralela = []
-    perpendicular = []
+    
 
     if op == 1:
         
@@ -147,6 +147,8 @@ while 1:
             coeficiente_principal = 0
             termino_independiente = 0
             con = 0
+            paralela = []
+            perpendicular = []
             
             print("""
 Perfecto. Vamos a sacar las paralelas y perpendiculares de una Funcion Lineal.
@@ -162,7 +164,14 @@ Ax + B
 
             os.system("cls")
 
-            if (coeficiente_principal != 0 ):
+            if (coeficiente_principal == 0 ):
+
+                space = input("""
+El coeficiente principal no puede ser 0.
+Precione cualquier tecla para continuar ...     
+    """)
+
+            else:
 
                 while (con < 3): ### Comienza a sacar las paralelas ###
                     flag = True
@@ -207,7 +216,7 @@ Ax + B
 
 
 
-                print(perpendicular)
+                
                 print (f"""
 Funcion :  {coeficiente_principal}x + {termino_independiente}
 
@@ -220,7 +229,6 @@ Funciones perpendiculares a la dada:
 {negative}x + {perpendicular[0]}
 {negative}x + {perpendicular[1]}
 {negative}x + {perpendicular[2]}
-
                             """)
                 
                 print("""
@@ -229,8 +237,6 @@ Seleccione una de las siguientes opciones:
 1) Regresar al menu principal.
 
 2) Sacar las paralelas y perpendiculares de otra funcion.
-
-3) Intercambiar decimales por fracciones.
 
                 """)
 
@@ -244,10 +250,8 @@ Seleccione una de las siguientes opciones:
                         bucle_paralel = False
                     case _:
                         print("opcion fuera de rango")
-            else:
-                space = input("""
-El coeficiente principal no puede ser 0.
-Precione cualquier tecla para continuar ...
-    """)
+
+                os.system("cls")
+            
 
             
