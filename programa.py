@@ -332,9 +332,9 @@ Seleccione una de las siguientes opciones:
             pendiente = 0
             # CUADRATICA
 
-            valor_pendiente = exacto("Ingrese el coheficiente principal. Siendo ax2 + bx + c ingrese el valor de a \n :")
-            valor_lineal = exacto("Ingrese el termino lineal. Siendo ax2 + bx + c ingrese el valor de b \n :")
-            valor_ordenada = exacto("Ingrese el termino independiente. Siendo ax2 + bx + c ingrese el valor de c \n :")
+            valor_pendiente = exacto("Ingrese el coheficiente principal. Siendo ax² + bx + c ingrese el valor de a \n :     ")
+            valor_lineal = exacto("Ingrese el termino lineal. Siendo ax² + bx + c ingrese el valor de b \n :    ")
+            valor_ordenada = exacto("Ingrese el termino independiente. Siendo ax² + bx + c ingrese el valor de c \n :   ")
             
             if (valor_pendiente == 0 ):
 
@@ -406,7 +406,7 @@ Solucion a la raiz dada: {valor_pendiente}x² + {pri_lineal}x + {pri_ordenada}
 Raices: X1: {raices[0]}     ,       X2: {raices[1]}
                 """)
                 else:
-                    print("Las no cruza el eje X en ningun punto real")
+                    print("Las no cruza el eje X en ningún punto real.")
 
                 
                 print(f"""
@@ -452,6 +452,6 @@ Seleccione una de las siguientes opciones:
                     case 2:
                         bucle_paralel = False
                     case _:
-                        print("opcion fuera de rango")
+                        print("opción fuera de rango")
 
                 os.system("cls")
