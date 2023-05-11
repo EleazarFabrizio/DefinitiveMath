@@ -387,9 +387,13 @@ Precione cualquier tecla para continuar ...
 
                 if valor_lineal < 0:
                     pri_lineal = "(" + str(valor_lineal) + ")"
+                else:
+                    pri_lineal = valor_lineal
                 
                 if valor_ordenada < 0:
                     pri_ordenada = "(" + str(valor_ordenada) + ")"
+                else:
+                    pri_ordenada = valor_ordenada
                 
 
                 print (f"""
