@@ -403,10 +403,10 @@ Solucion a la raiz dada: {valor_pendiente}x² + {pri_lineal}x + {pri_ordenada}
                     """)
                 if delta >= 0:
                     print(f"""
-Raices: X1: {raices[0]}     ,       X2: {raices[1]}
+Raices: X1: {Fraction(raices[0])}     ,       X2: {Fraction(raices[1])}
                 """)
                 else:
-                    print("Las no cruza el eje X en ningún punto real.")
+                    print("La parabola no cruza el eje X en ningún punto real.")
 
                 
                 print(f"""
