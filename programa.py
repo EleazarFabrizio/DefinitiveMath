@@ -57,7 +57,7 @@ def exacto(txt):
             flag = False
 
         except ValueError:
-            print("valor ingresado no correcto")
+            print("El valor ingresado no es valido.")
             continue
 
     return(resul)
@@ -99,7 +99,7 @@ def validar_rango(txt,min,max):
                 print("valor ingresado fuera de rango.")
 
         except ValueError:
-            print("valor ingresado no era un valor numerico.")
+            print("valor ingresado no es valido.")
             continue
 
     return(resul)
@@ -157,7 +157,7 @@ Ax + B
 
     """)
             coeficiente_principal = exacto("ingrese el valor principal (A):   ")
-            termino_independiente = encajar("ingrese el termino independiente (B):  ")
+            termino_independiente = exacto("ingrese el termino independiente (B):  ")
 
             
             
@@ -179,7 +179,7 @@ Precione cualquier tecla para continuar ...
                 while (con < 3): ### Comienza a sacar las paralelas ###
                     flag = True
             
-                    numran = random.randint(-20,20)
+                    numran = random.randint(-50,50)
 
                     for i in range (0,len(paralela)):
                         if ((numran == paralela[i]) or (numran == termino_independiente) or (numran == 0)):
@@ -199,7 +199,7 @@ Precione cualquier tecla para continuar ...
                 while (con < 3):
                     flag = True
 
-                    numran = random.randint(-20,20)
+                    numran = random.randint(-50,50)
 
                     for i in range (0,len(perpendicular)):
                         if ((numran == perpendicular[i]) or (numran == termino_independiente) or (numran == 0)):
