@@ -332,9 +332,9 @@ Seleccione una de las siguientes opciones:
             pendiente = 0
             # CUADRATICA
 
-            valor_pendiente = exacto("Ingrese el coheficiente principal. Siendo ax² + bx + c ingrese el valor de a \n :     ")
-            valor_lineal = exacto("Ingrese el termino lineal. Siendo ax² + bx + c ingrese el valor de b \n :    ")
-            valor_ordenada = exacto("Ingrese el termino independiente. Siendo ax² + bx + c ingrese el valor de c \n :   ")
+            valor_pendiente = exacto("Ingrese el coheficiente principal. Siendo ax² + bx + c. Ingrese el valor de a \n :     ")
+            valor_lineal = exacto("Ingrese el termino lineal. Siendo ax² + bx + c. Ingrese el valor de b \n :    ")
+            valor_ordenada = exacto("Ingrese el termino independiente. Siendo ax² + bx + c. Ingrese el valor de c \n :   ")
             
             if (valor_pendiente == 0 ):
 
