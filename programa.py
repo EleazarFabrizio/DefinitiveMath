@@ -366,15 +366,20 @@ Precione cualquier tecla para continuar ...
                     if delta == 0:
 
                         tipo_raiz = "Las raices son de doble multiplicidad" #raices doble multiplicidad
+                        
 
                     if delta > 0:
 
                         tipo_raiz = "Las raices son Reales" #raices reales
 
+                    if (raices[0]) == raices[1]:
+                        tipo_raiz = "Las raiz es una sola."
+
 
 
                 if delta < 0:
                     tipo_raiz = "Las raices son imaginarias/complejas" #no tiene raices reales
+                    
 
 
                     
