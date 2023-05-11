@@ -2,6 +2,7 @@
 import random
 import os
 from fractions import Fraction
+from math import sqrt
 
 
 # GLOBAL
@@ -50,9 +51,8 @@ def exacto(txt):
         num = input(txt)
 
         try:
-            resul = float(Fraction(num))
-            if float.is_integer(resul):
-                resul = int(resul)
+            
+            resul = (Fraction(num))
 
             flag = False
 
@@ -159,26 +159,27 @@ Ax + B
             coeficiente_principal = exacto("ingrese el valor principal (A):   ")
             termino_independiente = encajar("ingrese el termino independiente (B):  ")
 
-            negative = (1 / coeficiente_principal) * (-1)
+            
             
 
             os.system("cls")
 
             if (coeficiente_principal == 0 ):
 
+                
+
                 space = input("""
 El coeficiente principal no puede ser 0.
 Precione cualquier tecla para continuar ...     
     """)
-
+                os.system("cls")
             else:
+                negative = ((1 / coeficiente_principal) * (-1))
 
                 while (con < 3): ### Comienza a sacar las paralelas ###
                     flag = True
             
-                    ran = random.randint(-10,10)
-
-                    numran = termino_independiente + ran
+                    numran = random.randint(-20,20)
 
                     for i in range (0,len(paralela)):
                         if ((numran == paralela[i]) or (numran == termino_independiente) or (numran == 0)):
@@ -198,9 +199,7 @@ Precione cualquier tecla para continuar ...
                 while (con < 3):
                     flag = True
 
-                    ran = random.randint(-10,10)
-                    
-                    numran = termino_independiente + ran
+                    numran = random.randint(-20,20)
 
                     for i in range (0,len(perpendicular)):
                         if ((numran == perpendicular[i]) or (numran == termino_independiente) or (numran == 0)):
@@ -229,6 +228,9 @@ Funciones perpendiculares a la dada:
 {negative}x + {perpendicular[0]}
 {negative}x + {perpendicular[1]}
 {negative}x + {perpendicular[2]}
+
+la condicion de paralelismo es que el coeficiente principal sea el mismo y el termino independiente sea distinto.
+La condicion de perpendicularidad es que la pendiente debe ser inversa y opuesta, el termino independiente puede cambiar o no hacerlo.
                             """)
                 
                 print("""
@@ -254,4 +256,189 @@ Seleccione una de las siguientes opciones:
                 os.system("cls")
             
 
+    if op == 2:
+        
+        while menu_flag == True:
+
+            # LINEAL
+
+            coeficiente_principal = 0
+            termino_independiente = 0
+
+
             
+            print("""
+Perfecto. Vamos a resolver una Funcion Lineal.
+
+Ax + B
+
+    """)
+            coeficiente_principal = exacto("ingrese el valor principal (A):   ")
+            termino_independiente = exacto("ingrese el termino independiente (B):  ")
+
+            os.system("cls")
+
+            if (coeficiente_principal == 0 ):
+
+                space = input("""
+El coeficiente principal no puede ser 0.
+Precione cualquier tecla para continuar ...     
+    """)
+                os.system("cls")
+            else:
+                if (coeficiente_principal > 0):
+                    tipo_pendiente = "creciente"
+                else:
+                    tipo_pendiente = "decreciente"
+
+                if (termino_independiente != 0):
+                    corte_x = ((termino_independiente *-1) / coeficiente_principal )
+                else:
+                    corte_x = 0
+
+                os.system("cls")
+
+                print(f"""
+Solucion de la funcion dada:
+{coeficiente_principal}x + {termino_independiente}
+
+El corte en X es = {corte_x}
+El corte en Y es = {termino_independiente}
+El comportamiento de la recta es {tipo_pendiente}
+
+Seleccione una de las siguientes opciones:
+
+1) Regresar al menu principal.
+
+2) Sacar las paralelas y perpendiculares de otra funcion.
+""")
+                op = validar_rango(":     ",1,2)
+
+                match op:
+                    case 1:
+                        menu_flag = False
+                        bucle_paralel = False
+                    case 2:
+                        bucle_paralel = False
+                    case _:
+                        print("opcion fuera de rango")
+
+
+    if op == 3:
+        
+        while menu_flag == True:
+            raices = []
+            delta=0
+            pendiente = 0
+            # CUADRATICA
+
+            valor_pendiente = exacto("Ingrese el coheficiente principal. Siendo ax2 + bx + c ingrese el valor de a \n :")
+            valor_lineal = exacto("Ingrese el termino lineal. Siendo ax2 + bx + c ingrese el valor de b \n :")
+            valor_ordenada = exacto("Ingrese el termino independiente. Siendo ax2 + bx + c ingrese el valor de c \n :")
+            
+            if (valor_pendiente == 0 ):
+
+                space = input("""
+El coeficiente principal no puede ser 0.
+Precione cualquier tecla para continuar ...     
+    """)
+                os.system("cls")
+            else:
+
+                if(valor_pendiente>0):
+                    pendiente = 1
+                else:
+                    pendiente = -1
+
+                delta = (valor_lineal**2 - 4 * valor_pendiente * valor_ordenada)
+                    
+
+                if delta >= 0:
+
+                    raiz = ((valor_lineal * (-1)) + sqrt(delta)) / (2 * valor_pendiente)
+
+                    raices.append(raiz)
+
+                    raiz = ((valor_lineal * (-1)) - sqrt(delta)) / (2 * valor_pendiente)
+
+                    raices.append(raiz)
+
+                    if delta == 0:
+
+                        tipo_raiz = "Las raices son de doble multiplicidad" #raices doble multiplicidad
+
+                    if delta > 0:
+
+                        tipo_raiz = "Las raices son Reales" #raices reales
+
+
+
+                if delta < 0:
+                    tipo_raiz = "Las raices son imaginarias/complejas" #no tiene raices reales
+
+
+                    
+                    
+
+                vertice_x = (valor_lineal * -1) / (2 * valor_pendiente)
+
+                vertice_y = valor_pendiente * vertice_x ** 2 + valor_lineal * vertice_x + valor_ordenada
+
+
+                print (f"""
+{tipo_raiz}
+                    """)
+                if delta >= 0:
+                    print(f"""
+Raices: X1: {raices[0]}     ,       X2: {raices[1]}
+                """)
+                else:
+                    print("Las no cruza el eje X en ningun punto real")
+
+                
+                print(f"""
+El vertice X es:  {vertice_x}
+El vertice y es:  {vertice_y}
+
+Coordenadas de vertice: ({vertice_x},{vertice_y})
+                """)
+
+
+                if(pendiente==1):
+                    intervalo_decrecimiento = "(-∞, " + str(vertice_x) + ")"  
+                    intervalo_crecimiento = "(" + str(vertice_x) + ", +∞)"
+                    print("El intervalo de decrecimiento es " + intervalo_decrecimiento)
+                    print("El intervalo de crecimiento es " + intervalo_crecimiento)
+
+                elif(pendiente==-1):
+                    intervalo_crecimiento = "(-∞, " + str(vertice_x) + ")"  
+                    intervalo_decrecimiento = "(" + str(vertice_x) + ", +∞)"
+                    print("El intervalo de crecimiento es " + intervalo_crecimiento)
+                    print("El intervalo de decrecimiento es " + intervalo_decrecimiento)
+
+                if valor_pendiente > 0:
+                    print ("La parabola es cóncava para arriba")
+                else:
+                    print ("La parabola es cóncava para abajo")
+                
+
+                print("""
+Seleccione una de las siguientes opciones:
+
+1) Regresar al menu principal.
+
+2) Resolver otra funcion cuadratica.
+
+""")
+                op = validar_rango(":     ",1,2)
+
+                match op:
+                    case 1:
+                        menu_flag = False
+                        bucle_paralel = False
+                    case 2:
+                        bucle_paralel = False
+                    case _:
+                        print("opcion fuera de rango")
+
+    
