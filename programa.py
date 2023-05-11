@@ -385,7 +385,16 @@ Precione cualquier tecla para continuar ...
                 vertice_y = valor_pendiente * vertice_x ** 2 + valor_lineal * vertice_x + valor_ordenada
 
 
+                if valor_lineal < 0:
+                    pri_lineal = "(" + str(valor_lineal) + ")"
+                
+                if valor_ordenada < 0:
+                    pri_ordenada = "(" + str(valor_ordenada) + ")"
+                
+
                 print (f"""
+Solucion a la raiz dada: {valor_pendiente}x² + {pri_lineal}x + {pri_ordenada}
+
 {tipo_raiz}
                     """)
                 if delta >= 0:
@@ -400,7 +409,7 @@ Raices: X1: {raices[0]}     ,       X2: {raices[1]}
 El vertice X es:  {vertice_x}
 El vertice y es:  {vertice_y}
 
-Coordenadas de vertice: ({vertice_x},{vertice_y})
+Coordenadas de vertice: ({vertice_x} ; {vertice_y})
                 """)
 
 
@@ -441,4 +450,4 @@ Seleccione una de las siguientes opciones:
                     case _:
                         print("opcion fuera de rango")
 
-    
+                os.system("cls")
