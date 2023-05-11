@@ -57,7 +57,7 @@ def exacto(txt):
             flag = False
 
         except ValueError:
-            print("El valor ingresado no es valido.")
+            print("El valor ingresado no es valido. Por favor, vuelva a intentar")
             continue
 
     return(resul)
@@ -77,7 +77,7 @@ def validar(txt):
             flag = False
 
         except ValueError:
-            print("valor ingresado no era un valor numerico")
+            print("valor ingresado no era una opcion valida. Por favor, vuelva a intentar")
             continue
 
     return(resul)
@@ -96,10 +96,10 @@ def validar_rango(txt,min,max):
                 flag = False
                 resul = num
             else:
-                print("valor ingresado fuera de rango.")
+                print("valor ingresado fuera de rango. Por favor, vuelva a intentar")
 
         except ValueError:
-            print("valor ingresado no es valido.")
+            print("valor ingresado no es valido. Por favor, vuelva a intentar")
             continue
 
     return(resul)
