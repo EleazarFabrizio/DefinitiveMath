@@ -131,11 +131,11 @@ Bienvenido al programa de resolucion de funciones lineales y cuadraticas.
 
     2) Resolver una Funcion Lineal.
 
-    3) Resolver una Funcion cuadratica.
+    3) Resolver una Funcion cuadrática.
 
-    4) Resolver una secesion aritmetica.
+    4) Resolver una secesion aritmética.
 
-    5) Resolver una sucesion geometrica.
+    5) Resolver una sucesion geométrica.
     
     """)
 
@@ -484,9 +484,27 @@ Seleccione una de las siguientes opciones:
                 secuensia.append(secuensia[i]+dif)
             
             print (secuensia)
+            break
 
-            space = "Perfecto. Precione cualquier tecla para continuar."
+        space = input("Perfecto. Precione cualquier tecla para continuar.")
 
 
     if op == 5:
-        pass
+        while flag==True:
+            raz = exacto("Comencemos a resolver sucesiones aritmeticas\n\nIngrese la razón\n:    ")
+            ante = exacto("\nAhora ingrese el primer termino\n:  ")
+            fag=True
+            while fag==True:
+                cantidad=int(exacto("Ingrese la cantidad de terminos que desea conocer. El minimo es 5\n:  "))
+                if cantidad < 5:
+                    print("Disculpe. el valor ingresado no cumple con la cantidad minima")
+                else:
+                    fag=False
+            secuensia=[ante]
+            for i in range(0,cantidad):
+                secuensia.append(secuensia[i]*raz)
+            
+            print (secuensia)
+            break
+
+        continuar=input("Presionar enter para continuar")
