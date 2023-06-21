@@ -1,5 +1,4 @@
 
-#hola
 
 import random
 import os
@@ -523,3 +522,5 @@ Seleccione una de las siguientes opciones:
         continuar=input("""
 
         Presionar enter para continuar""")
+
+        #actu Ivi
