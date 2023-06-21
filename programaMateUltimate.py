@@ -59,7 +59,7 @@ def exacto(txt):
             flag = False
 
         except ValueError:
-            print("El valor ingresado no es valido. Por favor, vuelva a intentar")
+            print("El valor ingresado no es válido. Por favor, vuelva a intentar")
             continue
 
     return(resul)
@@ -79,7 +79,7 @@ def validar(txt):
             flag = False
 
         except ValueError:
-            print("valor ingresado no era una opcion valida. Por favor, vuelva a intentar")
+            print("valor ingresado no era una opción válida. Por favor, vuelva a intentar")
             continue
 
     return(resul)
@@ -101,7 +101,7 @@ def validar_rango(txt,min,max):
                 print("valor ingresado fuera de rango. Por favor, vuelva a intentar")
 
         except ValueError:
-            print("valor ingresado no es valido. Por favor, vuelva a intentar")
+            print("valor ingresado no es válido. Por favor, vuelva a intentar")
             continue
 
     return(resul)
@@ -122,18 +122,18 @@ while 1:
     
     print("""
 
-Bienvenido al programa de resolucion de funciones lineales y cuadraticas.
-¿En que podemos ayudarle?
+Bienvenido al programa de resolución de funciones lineales y cuadráticas.
+¿En qué podemos ayudarle?
 
-    por favor ingrese una opcion.
+    por favor ingrese una opción.
 
-    1) Sacar las Paralelas y Perpendiculares a una Funcion Lineal.
+    1) Sacar las Paralelas y Perpendiculares a una Función Lineal.
 
-    2) Resolver una Funcion Lineal.
+    2) Resolver una Función Lineal.
 
-    3) Resolver una Funcion cuadrática.
+    3) Resolver una Función cuadrática.
 
-    4) Resolver una secesion aritmética.
+    4) Resolver una sucesión aritmética.
 
     5) Resolver una sucesion geométrica.
     
@@ -157,13 +157,13 @@ Bienvenido al programa de resolucion de funciones lineales y cuadraticas.
             perpendicular = []
             
             print("""
-Perfecto. Vamos a sacar las paralelas y perpendiculares de una Funcion Lineal.
+Perfecto. Vamos a sacar las paralelas y perpendiculares de una Función Lineal.
 
 Ax + B
 
     """)
             coeficiente_principal = exacto("ingrese el valor principal (A):   ")
-            termino_independiente = exacto("ingrese el termino independiente (B):  ")
+            termino_independiente = exacto("ingrese el término independiente (B):  ")
 
             
             
@@ -176,7 +176,7 @@ Ax + B
 
                 space = input("""
 El coeficiente principal no puede ser 0.
-Precione cualquier tecla para continuar ...     
+Presione cualquier tecla para continuar ...     
     """)
                 os.system("cls")
             else:
@@ -223,7 +223,7 @@ Precione cualquier tecla para continuar ...
 
                 
                 print (f"""
-Funcion :  {coeficiente_principal}x + {termino_independiente}
+Función :  {coeficiente_principal}x + {termino_independiente}
 
 Funciones paralelas a la dada:
 {coeficiente_principal}x + {paralela[0]}
@@ -235,16 +235,16 @@ Funciones perpendiculares a la dada:
 {negative}x + {perpendicular[1]}
 {negative}x + {perpendicular[2]}
 
-la condicion de paralelismo es que el coeficiente principal sea el mismo y el termino independiente sea distinto.
-La condicion de perpendicularidad es que la pendiente debe ser inversa y opuesta, el termino independiente puede cambiar o no hacerlo.
+la condición de paralelismo es que el coeficiente principal sea el mismo y el término independiente sea distinto.
+La condición de perpendicularidad es que la pendiente debe ser inversa y opuesta, el término independiente puede cambiar o no hacerlo.
                             """)
                 
                 print("""
 Seleccione una de las siguientes opciones:
 
-1) Regresar al menu principal.
+1) Regresar al menú principal.
 
-2) Sacar las paralelas y perpendiculares de otra funcion.
+2) Sacar las paralelas y perpendiculares de otra función.
 
                 """)
 
@@ -257,7 +257,7 @@ Seleccione una de las siguientes opciones:
                     case 2:
                         bucle_paralel = False
                     case _:
-                        print("opcion fuera de rango")
+                        print("opción fuera de rango")
 
                 os.system("cls")
             
@@ -274,13 +274,13 @@ Seleccione una de las siguientes opciones:
 
             
             print("""
-Perfecto. Vamos a resolver una Funcion Lineal.
+Perfecto. Vamos a resolver una Función lineal.
 
 Ax + B
 
     """)
-            coeficiente_principal = exacto("ingrese el valor principal (A):   ")
-            termino_independiente = exacto("ingrese el termino independiente (B):  ")
+            coeficiente_principal = exacto("ingrese el coeficiente principal (A):   ")
+            termino_independiente = exacto("ingrese el término independiente (B):  ")
 
             os.system("cls")
 
@@ -288,7 +288,7 @@ Ax + B
 
                 space = input("""
 El coeficiente principal no puede ser 0.
-Precione cualquier tecla para continuar ...     
+Presione cualquier tecla para continuar ...     
     """)
                 os.system("cls")
             else:
@@ -305,7 +305,7 @@ Precione cualquier tecla para continuar ...
                 os.system("cls")
 
                 print(f"""
-Solucion de la funcion dada:
+Solución de la función dada:
 {coeficiente_principal}x + {termino_independiente}
 
 El corte en X es = {corte_x}
@@ -314,9 +314,9 @@ El comportamiento de la recta es {tipo_pendiente}
 
 Seleccione una de las siguientes opciones:
 
-1) Regresar al menu principal.
+1) Regresar al menú principal.
 
-2) Sacar las paralelas y perpendiculares de otra funcion.
+2) Sacar las paralelas y perpendiculares de otra función.
 """)
                 op = validar_rango(":     ",1,2)
 
@@ -327,7 +327,7 @@ Seleccione una de las siguientes opciones:
                     case 2:
                         bucle_paralel = False
                     case _:
-                        print("opcion fuera de rango")
+                        print("opción fuera de rango")
 
 
     if op == 3:
@@ -338,15 +338,15 @@ Seleccione una de las siguientes opciones:
             pendiente = 0
             # CUADRATICA
 
-            valor_pendiente = exacto("Ingrese el coheficiente principal. Siendo ax² + bx + c. Ingrese el valor de a \n :     ")
-            valor_lineal = exacto("Ingrese el termino lineal. Siendo ax² + bx + c. Ingrese el valor de b \n :    ")
-            valor_ordenada = exacto("Ingrese el termino independiente. Siendo ax² + bx + c. Ingrese el valor de c \n :   ")
+            valor_pendiente = exacto("Ingrese el coeficiente principal. Siendo ax² + bx + c. Ingrese el valor de a \n :     ")
+            valor_lineal = exacto("Ingrese el término lineal. Siendo ax² + bx + c. Ingrese el valor de b \n :    ")
+            valor_ordenada = exacto("Ingrese el término independiente. Siendo ax² + bx + c. Ingrese el valor de c \n :   ")
             
             if (valor_pendiente == 0 ):
 
                 space = input("""
 El coeficiente principal no puede ser 0.
-Precione cualquier tecla para continuar ...     
+Presione cualquier tecla para continuar ...     
     """)
                 os.system("cls")
             else:
@@ -371,20 +371,20 @@ Precione cualquier tecla para continuar ...
 
                     if delta == 0:
 
-                        tipo_raiz = "Las raices son de doble multiplicidad" #raices doble multiplicidad
+                        tipo_raiz = "Las raíces son de doble multiplicidad" #raices doble multiplicidad
                         
 
                     if delta > 0:
 
-                        tipo_raiz = "Las raices son Reales" #raices reales
+                        tipo_raiz = "Las raíces son Reales" #raices reales
 
                     if (raices[0]) == raices[1]:
-                        tipo_raiz = "Las raiz es una sola."
+                        tipo_raiz = "Las raíz es una sola."
 
 
 
                 if delta < 0:
-                    tipo_raiz = "Las raices son imaginarias/complejas" #no tiene raices reales
+                    tipo_raiz = "Las raíces son imaginarias/complejas" #no tiene raices reales
                     
 
 
@@ -408,23 +408,23 @@ Precione cualquier tecla para continuar ...
                 
 
                 print (f"""
-Solucion a la raiz dada: {valor_pendiente}x² + {pri_lineal}x + {pri_ordenada}
+Solucion a la raíz dada: {valor_pendiente}x² + {pri_lineal}x + {pri_ordenada}
 
 {tipo_raiz}
                     """)
                 if delta >= 0:
                     print(f"""
-Raices: X1: {Fraction(raices[0])}     ,       X2: {Fraction(raices[1])}
+Raíces: X1: {Fraction(raices[0])}     ,       X2: {Fraction(raices[1])}
                 """)
                 else:
-                    print("La parabola no cruza el eje X en ningún punto real.")
+                    print("La parábola no cruza el eje X en ningún punto real.")
 
                 
                 print(f"""
 El vertice X es:  {vertice_x}
 El vertice y es:  {vertice_y}
 
-Coordenadas de vertice: ({vertice_x} ; {vertice_y})
+Coordenadas de vértice: ({vertice_x} ; {vertice_y})
                 """)
 
 
@@ -441,17 +441,17 @@ Coordenadas de vertice: ({vertice_x} ; {vertice_y})
                     print("El intervalo de decrecimiento es " + intervalo_decrecimiento)
 
                 if valor_pendiente > 0:
-                    print ("La parabola es cóncava para arriba")
+                    print ("La parábola es cóncava para arriba")
                 else:
-                    print ("La parabola es cóncava para abajo")
+                    print ("La parábola es cóncava para abajo")
                 
 
                 print("""
 Seleccione una de las siguientes opciones:
 
-1) Regresar al menu principal.
+1) Regresar al menú principal.
 
-2) Resolver otra funcion cuadratica.
+2) Resolver otra función cuadrática.
 
 """)
                 op = validar_rango(":     ",1,2)
@@ -469,53 +469,53 @@ Seleccione una de las siguientes opciones:
 
     if op == 4:
         while flag == True:
-            dif = exacto("Comencemos a resolver sucesiones aritmeticas\n\nIngrese la diferencia\n:    ")
+            dif = exacto("Comencemos a resolver sucesiones aritméticas\n\nIngrese la diferencia\n:    ")
             ter = exacto("\nAhora ingrese el primer termino\n:  ")
             fag = True
             while fag == True:
-                can = int(exacto("Ingrese la cantidad de terminos que desea conocer. El minimo es 5\n:  "))
+                can = int(exacto("Ingrese la cantidad de términos que desea conocer. El mínimo es 5\n:  "))
                 if can < 5:
-                    print("Disculpe. el valor ingresado no cumple con la cantidad minima")
+                    print("Disculpe. el valor ingresado no cumple con la cantidad mínima")
                 else:
                     fag = False
-            secuensia = [ter]
+            secuencia = [ter]
 
             for i in range(0,can):
-                secuensia.append(secuensia[i]+dif)
-            msje=" La Sucesión aritmetica es: "
-            for i in secuensia:
+                secuencia.append(secuencia[i]+dif)
+            msje=" La Sucesión aritmética es: "
+            for i in secuencia:
 
                 msje+= "("+ str(i) + ")"
 
-                if i != secuensia[len(secuensia) - 1]:
+                if i != secuencia[len(secuencia) - 1]:
                      msje += " - "
             
             print(msje)
             break
 
-        space = input("Perfecto. Precione cualquier tecla para continuar.")
+        space = input("Perfecto. Presione cualquier tecla para continuar.")
 
 
     if op == 5:
         while flag==True:
-            raz = exacto("Comencemos a resolver sucesiones aritmeticas\n\nIngrese la razón\n:    ")
+            raz = exacto("Comencemos a resolver sucesiones geométrica\n\nIngrese la razón\n:    ")
             ante = exacto("\nAhora ingrese el primer termino\n:  ")
             fag=True
             while fag==True:
-                cantidad=int(exacto("Ingrese la cantidad de terminos que desea conocer. El minimo es 5\n:  "))
+                cantidad=int(exacto("Ingrese la cantidad de términos que desea conocer. El mínimo es 5\n:  "))
                 if cantidad < 5:
-                    print("Disculpe. el valor ingresado no cumple con la cantidad minima")
+                    print("Disculpe. el valor ingresado no cumple con la cantidad mínima")
                 else:
                     fag=False
-            secuensia=[ante]
+            secuencia=[ante]
             for i in range(0,cantidad):
-                secuensia.append(secuensia[i]*raz)
+                secuencia.append(secuencia[i]*raz)
             msje=" La Sucesión geométrica es: "
-            for i in secuensia:
+            for i in secuencia:
 
                 msje+= "("+ str(i) + ")"
 
-                if i != secuensia[len(secuensia) - 1]:
+                if i != secuencia[len(secuencia) - 1]:
                      msje += " - "
             print(msje)
             break
