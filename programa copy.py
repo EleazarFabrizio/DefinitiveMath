@@ -135,7 +135,7 @@ Bienvenido al programa de resolucion de funciones lineales y cuadraticas.
     
     """)
 
-    op = validar_rango("      :   ",1,5)
+    op = validar_rango("      :   ",1,3)
 
     os.system("cls")
     
@@ -462,27 +462,3 @@ Seleccione una de las siguientes opciones:
                         print("opción fuera de rango")
 
                 os.system("cls")
-
-    if op == 4:
-        while flag == True:
-            dif = exacto("Comencemos a resolver sucesiones aritmeticas\n\nIngrese la diferencia\n:    ")
-            ter = exacto("\nAhora ingrese el primer termino\n:  ")
-            fag = True
-            while fag == True:
-                can = int(exacto("Ingrese la cantidad de terminos que desea conocer. El minimo es 5\n:  "))
-                if can < 5:
-                    print("Disculpe. el valor ingresado no cumple con la cantidad minima")
-                else:
-                    fag = False
-            secuensia = [ter]
-
-            for i in range(0,can):
-                secuensia = secuensia[i]+dif
-            
-            print (secuensia)
-
-            space = "Perfecto. Precione cualquier tecla para continuar."
-
-
-    if op == 5:
-        pass
