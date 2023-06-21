@@ -132,6 +132,10 @@ Bienvenido al programa de resolucion de funciones lineales y cuadraticas.
     2) Resolver una Funcion Lineal.
 
     3) Resolver una Funcion cuadratica.
+
+    4) Resolver una secesion aritmetica.
+
+    5) Resolver una sucesion geometrica.
     
     """)
 
@@ -477,7 +481,7 @@ Seleccione una de las siguientes opciones:
             secuensia = [ter]
 
             for i in range(0,can):
-                secuensia = secuensia[i]+dif
+                secuensia.append(secuensia[i]+dif)
             
             print (secuensia)
 
