@@ -507,14 +507,14 @@ Seleccione una de las siguientes opciones:
                     fag = False
             secuencia = [ter]
 
-            for i in range(0,can):
+            for i in range(0,can-1):
                 secuencia.append(secuencia[i]+dif)
-            msje=" La Sucesión aritmética es: "
-            for i in secuencia:
+            msje="\n\nLa Sucesión aritmética es: "
+            for i in range(0,len(secuencia)):
 
-                msje+= "("+ str(i) + ")"
+                msje+= "("+ str(secuencia[i]) + ")"
 
-                if i != secuencia[len(secuencia) - 1]:
+                if secuencia[i] != secuencia[len(secuencia) - 1]:
                      msje += " - "
             
             print(msje)
@@ -522,7 +522,7 @@ Seleccione una de las siguientes opciones:
             creciente_decreciente(1,dif,ter)
             break
 
-        space = input("Perfecto. Presione cualquier tecla para continuar.")
+        space = input("\n\nPerfecto. Presione cualquier tecla para continuar.")
 
 
     if op == 5:
@@ -537,14 +537,14 @@ Seleccione una de las siguientes opciones:
                 else:
                     fag=False
             secuencia=[ante]
-            for i in range(0,cantidad):
+            for i in range(0,cantidad-1):
                 secuencia.append(secuencia[i]*raz)
-            msje=" La Sucesión geométrica es: "
-            for i in secuencia:
+            msje="\n\nLa Sucesión geométrica es: "
+            for i in range(0,len(secuencia)):
 
-                msje+= "("+ str(i) + ")"
+                msje+= "("+ str(secuencia[i]) + ")"
 
-                if i != secuencia[len(secuencia) - 1]:
+                if secuencia[i] != secuencia[len(secuencia) - 1]:
                      msje += " - "
             print(msje)
 
