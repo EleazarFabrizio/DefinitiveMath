@@ -107,30 +107,30 @@ def creciente_decreciente(tipe,raz,prim):
         
     if tipe == 1:
         if raz > 0:
-            print ("La sucesion es creciente. Dado que cada termino es mayor al anterior. a(n) <= a(n+1). d > 0")
+            print ("La sucesión es creciente. Dado que cada término es mayor al anterior. a(n) <= a(n+1). d > 0")
         elif raz < 0:
-            print ("La sucesion es decreciente. Dado que cada termino es menor al anterior. a(n) >= a(n+1). d < 0")
+            print ("La sucesión es decreciente. Dado que cada término es menor al anterior. a(n) >= a(n+1). d < 0")
         else:
-            print ("La sucesion es constante. Dado que cada termino es igual al anterior. a(n) = a(n+1). d = 0")
+            print ("La sucesión es constante. Dado que cada término es igual al anterior. a(n) = a(n+1). d = 0")
 
     if tipe == 2:
 
         if prim >= 0:
             if raz > 1:
-                print ("La sucesion es creciente. Dado que el primer termino es positivo y la razon es mayor que 1.")
+                print ("La sucesión es creciente. Dado que el primer término es positivo y la razón es mayor que 1.")
             elif (0 < raz) and (raz < 1):
-                print ("La sucesion es decreciente. Dado que el primer termino es positivo y la razon es menor que 1 y mayor que 0.")
+                print ("La sucesión es decreciente. Dado que el primer término es positivo y la razón es menor que 1 y mayor que 0.")
         
         if prim < 0:
             if raz > 1:
-                print ("La sucesion es decreciente. Dado que el primer termino es negativo y la razon es mayor que 1.")
+                print ("La sucesión es decreciente. Dado que el primer término es negativo y la razón es mayor que 1.")
             elif (0 < raz) and (raz < 1):
-                print ("La sucesion es creciente. Dado que el primer termino es negativo y la razon es menor que 1 y mayor que 0.")
+                print ("La sucesión es creciente. Dado que el primer término es negativo y la razón es menor que 1 y mayor que 0.")
 
         if raz < 0:
-            print("La sucesion es alternada, dado que la razon es menor a 0.")
+            print("La sucesión es alternada, dado que la razón es menor a 0.")
         if raz == 1:
-            print ("La sucesion es constante, dado que la razon es igual a 1.")
+            print ("La sucesión es constante, dado que la razón es igual a 1.")
 
 
 
@@ -549,7 +549,7 @@ Seleccione una de las siguientes opciones:
             break
 
         continuar=input("""
+            
+            Presionar enter para continuar""")
 
-        Presionar enter para continuar""")
-
-        #actu Ivi + Ele
+        #actu Ivi + Ele + final
