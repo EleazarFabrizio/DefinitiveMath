@@ -19,9 +19,6 @@ bucle_paralel = True
 
 
 
-"holi"
-
-
 
 def encajar(txt):
 
@@ -544,7 +541,7 @@ Seleccione una de las siguientes opciones:
 
                 msje+= "("+ str(secuencia[i]) + ")"
 
-                if secuencia[i] != secuencia[len(secuencia) - 1]:
+                if i != len(secuencia) - 1:
                      msje += " - "
             print(msje)
 
@@ -555,4 +552,4 @@ Seleccione una de las siguientes opciones:
 
         Presionar enter para continuar""")
 
-        #actu Ivi
+        #actu Ivi + Ele
