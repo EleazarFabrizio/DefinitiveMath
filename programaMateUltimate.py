@@ -494,7 +494,7 @@ Seleccione una de las siguientes opciones:
     if op == 4:
         while flag == True:
             dif = exacto("Comencemos a resolver sucesiones aritméticas\n\nIngrese la diferencia\n:    ")
-            ter = exacto("\nAhora ingrese el primer termino\n:  ")
+            ter = exacto("\nAhora ingrese el primer término\n:  ")
             fag = True
             while fag == True:
                 can = int(exacto("Ingrese la cantidad de términos que desea conocer. El mínimo es 5\n:  "))
@@ -511,7 +511,7 @@ Seleccione una de las siguientes opciones:
 
                 msje+= "("+ str(secuencia[i]) + ")"
 
-                if secuencia[i] != secuencia[len(secuencia) - 1]:
+                if i != len(secuencia) - 1:
                      msje += " - "
             
             print(msje)
@@ -537,12 +537,20 @@ Seleccione una de las siguientes opciones:
             for i in range(0,cantidad-1):
                 secuencia.append(secuencia[i]*raz)
             msje="\n\nLa Sucesión geométrica es: "
+
+
             for i in range(0,len(secuencia)):
 
                 msje+= "("+ str(secuencia[i]) + ")"
 
                 if i != len(secuencia) - 1:
-                     msje += " - "
+                    msje += " - "
+            if (raz == 0) and (ante != 0):
+                msje += "\n\nLa sucesión no es geometrica ni aritmetica, dado que la razón es igual a 0."
+            
+            elif(raz == 0):
+                msje = "La sucesión no tiene solución. Dado que 0 elevado a la 0 no es resoluble."
+
             print(msje)
 
             creciente_decreciente(2,raz,ante)
@@ -552,4 +560,4 @@ Seleccione una de las siguientes opciones:
             
             Presionar enter para continuar""")
 
-        #actu Ivi + Ele + final
+        #actu Ivi + Ele + final + correcciones
